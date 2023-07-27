@@ -8,9 +8,9 @@ vector<int> solution(string myString) {
     
     int stan = 0;
     
-    for(auto& str : myString){
+    for(const auto str : myString){
         if(str == 'x'){
-            answer.push_back(stan);
+            answer.emplace_back(stan);
             stan = 0;
             continue;
         }
@@ -18,7 +18,7 @@ vector<int> solution(string myString) {
         stan++;
     }
     
-    answer.push_back(stan);
+    answer.emplace_back(stan);
     
     return answer;
 }
